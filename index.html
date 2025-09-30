@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>STOP Columbia Heights Flavor Ban</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      background:#f8fafc;
+    }
+    .container {
+      text-align:center;
+      width:320px;
+    }
+    h1 { margin-bottom:20px; font-size:1.6rem; color:#111827; }
+    input {
+      display:block;
+      width:100%;
+      padding:10px;
+      margin:6px 0;
+      border:1px solid #cbd5e1;
+      border-radius:8px;
+      font-size:1rem;
+    }
+    .btn {
+      display:block;
+      width:100%;
+      margin:10px auto;
+      padding:14px;
+      font-size:1rem;
+      font-weight:600;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      background:#111827;
+      color:#fff;
+      transition:background .2s ease;
+    }
+    .btn:hover { background:#374151; }
+    .btn-light {
+      background:#e5e7eb;
+      color:#111827;
+    }
+    .btn-light:hover { background:#d1d5db; }
+    .error {
+      color:#b91c1c;
+      font-size:.9rem;
+      margin-top:6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>STOP Columbia Heights Flavor Ban</h1>
+
+    <!-- User Info -->
+    <input id="firstName" type="text" placeholder="First Name (required)" />
+    <input id="lastName" type="text" placeholder="Last Name (required)" />
+    <input id="zipCode" type="text" placeholder="Zip Code (required)" />
+    <input id="address" type="text" placeholder="Address (optional)" />
+
+    <!-- Buttons -->
+    <button id="btn1" class="btn">Send Email as a Concerned Citizen</button>
+    <button id="btn2" class="btn">Send Email as a Small Business</button>
+    <button id="btn3" class="btn btn-light">Write My Own Email</button>
+
+    <p id="errorMsg" class="error"></p>
+  </div>
+
+  <script>
+    const recipients = ["asdasd@gmail.com","sfdsf@gmail.com"];
+    const subject = "STOP Columbia Heights Flavor Ban";
+
+    const citizenTemplates = [
+`Dear Council Members,
+
+I’m a Columbia Heights resident asking you to oppose the proposed flavor ban. It will push purchases to neighboring cities and online sellers while hurting local shops without addressing youth access. Please vote NO.
+
+Sincerely,
+[FirstName] [LastName]
+[Address]
+[ZipCode]`,
+`Hello Council,
+
+Please reject the flavor ban. We already have laws against underage sales; stronger enforcement and education are better tools than banning legal products for adults.
+
+Thank you,
+[FirstName] [LastName]
+[Address]
+[ZipCode]`,
+`Council Members,
+
+I value balanced policy. A blanket flavor ban punishes compliant businesses and adult consumers. Consider ID tech, compliance checks, and retailer penalties instead of prohibition.
+
+Respectfully,
+[FirstName] [LastName]
+[Address]
+[ZipCode]`,
+`To the Columbia Heights City Council,
+
+I’m concerned this ban will reduce tax revenue and shift sales elsewhere, hurting our community. Target bad actors, not responsible retailers and adults. Please vote against the flavor ban.
+
+Best,
+[FirstName] [LastName]
+[Address]
+[ZipCode]`,
+`Dear Council,
+
+Please focus on enforcement and education rather than a broad flavor ban. Responsible adults deserve choice, and compliant stores deserve fair treatment.
+
+Regards,
+[FirstName] [LastName]
+[Address]
+[ZipCode]`
+    ];
+
+    const businessTemplates = [
+`Dear Council Members,
+
+As a small business in Columbia Heights, a flavor ban would significantly reduce revenue, threaten jobs, and push customers to nearby cities. We invest in ID scanning and training—please support enforcement over prohibition.
+
+Thank you,
+[FirstName] [LastName]
+[Business Name]
+[Address]
+[ZipCode]`,
+`Hello Council,
+
+Our store follows strict compliance protocols. A flavor ban would penalize compliant retailers and cut city sales tax. Please consider stronger compliance checks instead.
+
+Sincerely,
+[FirstName] [LastName]
+[Business Name]
+[Address]
+[ZipCode]`,
+`Council Members,
+
+I employ local residents who rely on these jobs. The proposed ban jeopardizes our payroll and leases. Please vote NO and focus on targeting violators.
+
+Respectfully,
+[FirstName] [LastName]
+[Business Name]
+[Address]
+[ZipCode]`,
+`To the Columbia Heights City Council,
+
+We’ve invested in age-verification systems and staff training. A ban would undo years of work and send customers elsewhere. Please pursue enforcement and education instead.
+
+Best,
+[FirstName] [LastName]
+[Business Name]
+[Address]
+[ZipCode]`,
+`Dear Council,
+
+Flavored products are a lawful part of our inventory for adult customers. A ban harms small businesses and won’t stop cross-border purchases. Please oppose the flavor ban.
+
+Regards,
+[FirstName] [LastName]
+[Business Name]
+[Address]
+[ZipCode]`
+    ];
+
+    function encodeMailtoBody(str) {
+      return encodeURIComponent(str).replace(/%0A/g, "%0D%0A");
+    }
+
+    function buildMailto(body="") {
+      const to = recipients.join(",");
+      return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeMailtoBody(body)}`;
+    }
+
+    function personalize(template) {
+      const first = document.getElementById("firstName").value.trim();
+      const last  = document.getElementById("lastName").value.trim();
+      const zip   = document.getElementById("zipCode").value.trim();
+      const addr  = document.getElementById("address").value.trim();
+
+      // Validation for required fields
+      if (!first || !last || !zip) {
+        document.getElementById("errorMsg").textContent = "First name, last name, and zip code are required.";
+        return null;
+      }
+      document.getElementById("errorMsg").textContent = "";
+
+      // Replace placeholders
+      return template
+        .replace(/\[FirstName\]/g, first)
+        .replace(/\[LastName\]/g, last)
+        .replace(/\[ZipCode\]/g, zip)
+        .replace(/\[Address\]/g, addr ? addr : "");
+    }
+
+    function sendRandom(templates) {
+      let template = templates[Math.floor(Math.random()*templates.length)];
+      const body = personalize(template);
+      if (body) {
+        window.location.href = buildMailto(body);
+      }
+    }
+
+    document.getElementById("btn1").onclick = () => sendRandom(citizenTemplates);
+    document.getElementById("btn2").onclick = () => sendRandom(businessTemplates);
+    document.getElementById("btn3").onclick = () => {
+      const body = personalize(""); // validation still applies
+      if (body !== null) {
+        window.location.href = buildMailto(""); // blank body
+      }
+    };
+  </script>
+</body>
+</html>
