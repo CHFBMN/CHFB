@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>STOP Columbia Heights Flavor Ban</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center; /* center horizontally */
+      align-items:center;     /* center vertically */
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
+      background:#f8fafc;
+    }
+    .container {
+      text-align:center;
+    }
+    h1 {
+      margin-bottom:30px;
+      font-size:1.8rem;
+      color:#111827;
+    }
+    .btn {
+      display:block;
+      width:280px;
+      margin:12px auto;
+      padding:14px 18px;
+      font-size:1rem;
+      font-weight:600;
+      border:none;
+      border-radius:10px;
+      cursor:pointer;
+      background:#111827;
+      color:#fff;
+      transition:background .2s ease;
+    }
+    .btn:hover { background:#374151; }
+    .btn-light {
+      background:#e5e7eb;
+      color:#111827;
+    }
+    .btn-light:hover { background:#d1d5db; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>STOP Columbia Heights Flavor Ban</h1>
+    <button id="btn1" class="btn">Send Email as a Concerned Citizen</button>
+    <button id="btn2" class="btn">Send Email as a Small Business</button>
+    <button id="btn3" class="btn btn-light">Write My Own Email</button>
+  </div>
+
+  <script>
+    const recipients = ["asdasd@gmail.com","sfdsf@gmail.com"];
+    const subject = "STOP Columbia Heights Flavor Ban";
+
+    const citizenTemplates = [
+`Dear Council Members,
+
+I’m a Columbia Heights resident asking you to oppose the proposed flavor ban. It will push purchases to neighboring cities and online sellers while hurting local shops without addressing youth access. Please vote NO.
+
+Sincerely,
+[Your Name]`,
+`Hello Council,
+
+Please reject the flavor ban. We already have laws against underage sales; stronger enforcement and education are better tools than banning legal products for adults.
+
+Thank you,
+[Your Name]`,
+`Council Members,
+
+I value balanced policy. A blanket flavor ban punishes compliant businesses and adult consumers. Consider ID tech, compliance checks, and retailer penalties instead of prohibition.
+
+Respectfully,
+[Your Name]`,
+`To the Columbia Heights City Council,
+
+I’m concerned this ban will reduce tax revenue and shift sales elsewhere, hurting our community. Target bad actors, not responsible retailers and adults. Please vote against the flavor ban.
+
+Best,
+[Your Name]`,
+`Dear Council,
+
+Please focus on enforcement and education rather than a broad flavor ban. Responsible adults deserve choice, and compliant stores deserve fair treatment.
+
+Regards,
+[Your Name]`
+    ];
+
+    const businessTemplates = [
+`Dear Council Members,
+
+As a small business in Columbia Heights, a flavor ban would significantly reduce revenue, threaten jobs, and push customers to nearby cities. We invest in ID scanning and training—please support enforcement over prohibition.
+
+Thank you,
+[Your Name]
+[Business Name]`,
+`Hello Council,
+
+Our store follows strict compliance protocols. A flavor ban would penalize compliant retailers and cut city sales tax. Please consider stronger compliance checks instead.
+
+Sincerely,
+[Your Name]
+[Business Name]`,
+`Council Members,
+
+I employ local residents who rely on these jobs. The proposed ban jeopardizes our payroll and leases. Please vote NO and focus on targeting violators.
+
+Respectfully,
+[Your Name]
+[Business Name]`,
+`To the Columbia Heights City Council,
+
+We’ve invested in age-verification systems and staff training. A ban would undo years of work and send customers elsewhere. Please pursue enforcement and education instead.
+
+Best,
+[Your Name]
+[Business Name]`,
+`Dear Council,
+
+Flavored products are a lawful part of our inventory for adult customers. A ban harms small businesses and won’t stop cross-border purchases. Please oppose the flavor ban.
+
+Regards,
+[Your Name]
+[Business Name]`
+    ];
+
+    function buildMailto(body="") {
+      const to = recipients.join(",");
+      const params = new URLSearchParams({ subject, body });
+      return `mailto:${to}?${params.toString()}`;
+    }
+    function sendRandom(templates) {
+      const body = templates[Math.floor(Math.random()*templates.length)];
+      window.location.href = buildMailto(body);
+    }
+
+    document.getElementById("btn1").onclick = () => sendRandom(citizenTemplates);
+    document.getElementById("btn2").onclick = () => sendRandom(businessTemplates);
+    document.getElementById("btn3").onclick = () => window.location.href = buildMailto("");
+  </script>
+</body>
+</html>
