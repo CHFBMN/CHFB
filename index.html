@@ -60,14 +60,13 @@
     <h1>STOP Columbia Heights Flavor Ban</h1>
 
     <!-- User Info -->
-    <input id="firstName" type="text" placeholder="First Name (required)" />
-    <input id="lastName" type="text" placeholder="Last Name (required)" />
+    <input id="name" type="text" placeholder="Name (required)" />
+    <input id="address" type="text" placeholder="Street Address" />
+    <input id="city" type="text" placeholder="City (required)" />
     <input id="zipCode" type="text" placeholder="Zip Code (required)" />
-    <input id="address" type="text" placeholder="Address (optional)" />
 
     <!-- Buttons -->
-    <button id="btn1" class="btn">Send Email as a Concerned Citizen</button>
-    <button id="btn2" class="btn">Send Email as a Small Business</button>
+    <button id="btn1" class="btn">Send Pre-Drafted Email</button>
     <button id="btn3" class="btn btn-light">Write My Own Email</button>
 
     <p id="errorMsg" class="error"></p>
@@ -83,89 +82,46 @@
 I’m a Columbia Heights resident asking you to oppose the proposed flavor ban. It will push purchases to neighboring cities and online sellers while hurting local shops without addressing youth access. Please vote NO.
 
 Sincerely,
-[FirstName] [LastName]
-[Address]
+[name]
+[address]
+[city]
 [ZipCode]`,
 `Hello Council,
 
 Please reject the flavor ban. We already have laws against underage sales; stronger enforcement and education are better tools than banning legal products for adults.
 
 Thank you,
-[FirstName] [LastName]
-[Address]
+[name]
+[address]
+[city]
 [ZipCode]`,
 `Council Members,
 
 I value balanced policy. A blanket flavor ban punishes compliant businesses and adult consumers. Consider ID tech, compliance checks, and retailer penalties instead of prohibition.
 
 Respectfully,
-[FirstName] [LastName]
-[Address]
+[name]
+[address]
+[city]
 [ZipCode]`,
 `To the Columbia Heights City Council,
 
 I’m concerned this ban will reduce tax revenue and shift sales elsewhere, hurting our community. Target bad actors, not responsible retailers and adults. Please vote against the flavor ban.
 
 Best,
-[FirstName] [LastName]
-[Address]
+[name]
+[address]
+[city]
 [ZipCode]`,
 `Dear Council,
 
 Please focus on enforcement and education rather than a broad flavor ban. Responsible adults deserve choice, and compliant stores deserve fair treatment.
 
 Regards,
-[FirstName] [LastName]
-[Address]
-[ZipCode]`
-    ];
-
-    const businessTemplates = [
-`Dear Council Members,
-
-As a small business in Columbia Heights, a flavor ban would significantly reduce revenue, threaten jobs, and push customers to nearby cities. We invest in ID scanning and training—please support enforcement over prohibition.
-
-Thank you,
-[FirstName] [LastName]
-[Business Name]
-[Address]
+[name]
+[address]
+[city]
 [ZipCode]`,
-`Hello Council,
-
-Our store follows strict compliance protocols. A flavor ban would penalize compliant retailers and cut city sales tax. Please consider stronger compliance checks instead.
-
-Sincerely,
-[FirstName] [LastName]
-[Business Name]
-[Address]
-[ZipCode]`,
-`Council Members,
-
-I employ local residents who rely on these jobs. The proposed ban jeopardizes our payroll and leases. Please vote NO and focus on targeting violators.
-
-Respectfully,
-[FirstName] [LastName]
-[Business Name]
-[Address]
-[ZipCode]`,
-`To the Columbia Heights City Council,
-
-We’ve invested in age-verification systems and staff training. A ban would undo years of work and send customers elsewhere. Please pursue enforcement and education instead.
-
-Best,
-[FirstName] [LastName]
-[Business Name]
-[Address]
-[ZipCode]`,
-`Dear Council,
-
-Flavored products are a lawful part of our inventory for adult customers. A ban harms small businesses and won’t stop cross-border purchases. Please oppose the flavor ban.
-
-Regards,
-[FirstName] [LastName]
-[Business Name]
-[Address]
-[ZipCode]`
     ];
 
     function encodeMailtoBody(str) {
@@ -178,13 +134,13 @@ Regards,
     }
 
     function personalize(template) {
-      const first = document.getElementById("firstName").value.trim();
-      const last  = document.getElementById("lastName").value.trim();
+      const name = document.getElementById("name").value.trim();
+      const city  = document.getElementById("city").value.trim();
       const zip   = document.getElementById("zipCode").value.trim();
       const addr  = document.getElementById("address").value.trim();
 
       // Validation for required fields
-      if (!first || !last || !zip) {
+      if (!name || !city || !zip) {
         document.getElementById("errorMsg").textContent = "First name, last name, and zip code are required.";
         return null;
       }
@@ -192,10 +148,10 @@ Regards,
 
       // Replace placeholders
       return template
-        .replace(/\[FirstName\]/g, first)
-        .replace(/\[LastName\]/g, last)
+        .replace(/\[name\]/g, first)
+        .replace(/\[city\]/g, city)
         .replace(/\[ZipCode\]/g, zip)
-        .replace(/\[Address\]/g, addr ? addr : "");
+        .replace(/\[address\]/g, addr ? addr : "");
     }
 
     function sendRandom(templates) {
