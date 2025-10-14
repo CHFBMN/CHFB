@@ -73,13 +73,14 @@
   </div>
 
   <script>
-    const recipients = ["asdasd@gmail.com","sfdsf@gmail.com"];
+    const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
     const subject = "STOP Columbia Heights Flavor Ban";
-
+	const bcc = "stopmnflavorban@gmail.com";
+	
     const citizenTemplates = [
 `Dear Council Members,
 
-I’m a Columbia Heights resident asking you to oppose the proposed flavor ban. It will push purchases to neighboring cities and online sellers while hurting local shops without addressing youth access. Please vote NO.
+Adults should be free to choose. This ban only limits responsible adults and cuts city tax revenue that supports our community. Please vote no.
 
 Sincerely,
 [name]
@@ -88,7 +89,7 @@ Sincerely,
 [ZipCode]`,
 `Hello Council,
 
-Please reject the flavor ban. We already have laws against underage sales; stronger enforcement and education are better tools than banning legal products for adults.
+Other nearby cities don’t have these bans. People will just shop elsewhere, hurting Columbia Heights businesses. Please reconsider.
 
 Thank you,
 [name]
@@ -97,7 +98,7 @@ Thank you,
 [ZipCode]`,
 `Council Members,
 
-I value balanced policy. A blanket flavor ban punishes compliant businesses and adult consumers. Consider ID tech, compliance checks, and retailer penalties instead of prohibition.
+Kids aren’t getting tobacco from licensed stores. We already check IDs and follow the law. Don’t punish responsible retailers.
 
 Respectfully,
 [name]
@@ -106,7 +107,7 @@ Respectfully,
 [ZipCode]`,
 `To the Columbia Heights City Council,
 
-I’m concerned this ban will reduce tax revenue and shift sales elsewhere, hurting our community. Target bad actors, not responsible retailers and adults. Please vote against the flavor ban.
+This ban affects cigars, pipe tobacco, and chew—products for adults, not kids. Please don’t take away legal adult options.
 
 Best,
 [name]
@@ -115,7 +116,7 @@ Best,
 [ZipCode]`,
 `Dear Council,
 
-Please focus on enforcement and education rather than a broad flavor ban. Responsible adults deserve choice, and compliant stores deserve fair treatment.
+This hurts Columbia Heights businesses and helps shops in other cities. Please stand with local business owners.
 
 Regards,
 [name]
@@ -130,7 +131,7 @@ Regards,
 
     function buildMailto(body="") {
       const to = recipients.join(",");
-      return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeMailtoBody(body)}`;
+      return `mailto:${to}?subject=${encodeURIComponent(subject)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
     }
 
     function personalize(template) {
