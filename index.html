@@ -73,51 +73,381 @@
 
   <script>
     const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
-    const subjects = ["Reconsider the tobacco flavor ban","Bans and prohibition do not work","Please vote no on the new tobacco ordinance"];
+    const subjects = [
+"Stop the Columbia Heights flavor ban",
+"Protect adult choice in Columbia Heights",
+"Please support local businesses – vote no on the ban",
+"Flavored tobacco ban will hurt local stores",
+"Let adults make their own choices",
+"Don’t take away legal products from adults",
+"Keep Columbia Heights businesses strong",
+"Vote no on the flavored product ban",
+"Trust adults, not bans",
+"Stand with local shops – oppose the flavor ban"
+];
 	const bcc = "stopmnflavorban@gmail.com";
 	
     const citizenTemplates = [
 `Dear Council Members,
-
-Adults should be free to choose. This ban only limits responsible adults and cuts city tax revenue that supports our community. Please vote no.
+Adults should have the freedom to choose legal products. This ban limits adult choice and cuts local tax money. Please vote no.
 
 Sincerely,
-[name]
-[city]
-[ZipCode]`,
-`Hello Council,
+[name],
+[city],
+[ZipCode]
+`,
 
-Other nearby cities don’t have these bans. People will just shop elsewhere, hurting Columbia Heights businesses. Please reconsider.
+`Hello City Council,
+Please don’t take away adult choices. This ban only hurts responsible customers and the city’s tax revenue.
 
 Thank you,
-[name]
-[city]
-[ZipCode]`,
+[name],
+[city],
+[ZipCode]
+`,
+
 `Council Members,
-
-Kids aren’t getting tobacco from licensed stores. the tobacco stores are already check IDs and follow the law. Don’t punish responsible retailers.
-
-Respectfully,
-[name]
-[city]
-[ZipCode]`,
-`To the Columbia Heights City Council,
-
-This ban affects cigars, pipe tobacco, and chew—products for adults, not kids. Please don’t take away legal adult options.
+Other cities nearby don’t have this ban. People will just shop elsewhere and the city will lose money.
 
 Best,
-[name]
-[city]
-[ZipCode]`,
-`Dear Council,
+[name],
+[city],
+[ZipCode]
+`,
 
-This hurts Columbia Heights businesses and helps shops in other cities. Please stand with local business owners.
+`Dear Columbia Heights Council,
+Adults deserve to make their own decisions. Please don’t limit products that are already regulated.
 
 Regards,
-[name]
-[city]
-[ZipCode]`,
-    ];
+[name],
+[city],
+[ZipCode]
+`,
+
+`To the Council,
+This ban pushes people to other cities. Columbia Heights stores and jobs will suffer. Please reconsider.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council Members,
+Kids aren’t getting tobacco from stores that check IDs. Please don’t punish honest businesses.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hi Council,
+Store owners follow the rules and check IDs. This ban won’t help youth—it will just hurt local business.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council Members,
+Please remember—licensed stores already prevent youth access. Don’t punish the good ones.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Columbia Heights Council,
+This ban includes cigars, chew, and pipe tobacco—products adults enjoy responsibly. Please vote no.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To the City Council,
+Not all tobacco is for kids. Adults enjoy cigars and chew responsibly. Please keep these products legal.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council,
+This ban goes too far. Adults who enjoy legal products should not lose their options.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council Members,
+Please don’t punish adults or small shops. This ban helps stores in other cities, not ours.
+
+Regards,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council,
+This ban will drive customers to nearby cities. Let adults decide for themselves.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To the Council,
+Local businesses already struggle. Don’t add another rule that sends customers away.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council Members,
+Adults can make responsible choices. Please don’t take away legal products or local jobs.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council,
+Please stand with small business owners. This ban will hurt local stores and reduce tax income.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Columbia Heights Leaders,
+Other cities still allow flavored products. Please don’t make our community lose business.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To City Council,
+Please trust adults to make their own choices. This ban isn’t fair to responsible stores.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council Members,
+Stores already check IDs. The ban won’t stop youth—it just hurts Columbia Heights shops.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council,
+Please protect adult freedom and local business. Say no to the flavor ban.
+
+Best regards,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council,
+Please don’t pass the flavor ban. Adults should have choices and businesses need your support.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council Members,
+We deserve the freedom to buy legal products. This ban only hurts local stores and adults.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council,
+This ban takes away options from responsible adults. Please vote no and protect local jobs.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear City Council,
+Columbia Heights will lose tax money and customers if this passes. Please stop the flavor ban.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To the Council Members,
+People will just shop in nearby cities. Please don’t hurt Columbia Heights businesses.
+
+Regards,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council Members,
+Adults can make their own decisions. Please don’t limit products that are already legal.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council Members,
+Other cities don’t have this ban. We’ll just spend our money there instead. Please reconsider.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council,
+Our local shops follow the law and check IDs. The problem isn’t the stores—please vote no.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council,
+Stores check IDs every day. Kids aren’t getting these products there. Please don’t ban them.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To the Council,
+Adults use these products responsibly. Please don’t take away legal options.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council Members,
+This ban affects pipe tobacco and cigars—things adults enjoy responsibly. Please vote no.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello City Council,
+I’m an adult and I should have the right to choose. Please don’t take that away.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council Members,
+This ban will hurt small stores that depend on these sales. Please support local business.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Columbia Heights Council,
+This isn’t fair to small business owners who follow the law. Please stop the ban.
+
+Best,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council,
+Adults know what they want. Please don’t take away legal products from responsible people.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`To City Council,
+Banning flavors won’t stop youth use—it just hurts the stores that follow the law.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council Members,
+Local stores check IDs and follow every rule. Please don’t punish them with this ban.
+
+Respectfully,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Hello Council,
+Please protect local businesses and adult choice. Vote no on the flavor ban.
+
+Thank you,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Council Members,
+Columbia Heights should support responsible adults, not restrict them. Please vote against the ban.
+
+Sincerely,
+[name],
+[city],
+[ZipCode]
+`,
+
+`Dear Council,
+This ban hurts Columbia Heights jobs and small businesses. Please keep flavors legal.
+
+Best regards,
+[name],
+[city],
+[ZipCode]
+`
+];
 
     function encodeMailtoBody(str) {
       return encodeURIComponent(str).replace(/%0A/g, "%0D%0A");
