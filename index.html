@@ -61,9 +61,8 @@
 
     <!-- User Info -->
     <input id="name" type="text" placeholder="Name (required)" />
-    <input id="address" type="text" placeholder="Street Address" />
-    <input id="city" type="text" placeholder="City (required)" />
-    <input id="zipCode" type="text" placeholder="Zip Code (required)" />
+    <input id="city" type="text" placeholder="City (required)" value="Columbia Heights" />
+    <input id="zipCode" type="text" placeholder="Zip Code (required)" value="55421"/>
 
     <!-- Buttons -->
     <button id="btn1" class="btn">Send Pre-Drafted Email</button>
@@ -74,7 +73,7 @@
 
   <script>
     const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
-    const subject = "STOP Columbia Heights Flavor Ban";
+    const subjects = ["Reconsider the tobacco flavor ban","Bans and prohibition do not work","Please vote no on the new tobacco ordinance"];
 	const bcc = "stopmnflavorban@gmail.com";
 	
     const citizenTemplates = [
@@ -84,7 +83,6 @@ Adults should be free to choose. This ban only limits responsible adults and cut
 
 Sincerely,
 [name]
-[address]
 [city]
 [ZipCode]`,
 `Hello Council,
@@ -93,16 +91,14 @@ Other nearby cities don’t have these bans. People will just shop elsewhere, hu
 
 Thank you,
 [name]
-[address]
 [city]
 [ZipCode]`,
 `Council Members,
 
-Kids aren’t getting tobacco from licensed stores. We already check IDs and follow the law. Don’t punish responsible retailers.
+Kids aren’t getting tobacco from licensed stores. the tobacco stores are already check IDs and follow the law. Don’t punish responsible retailers.
 
 Respectfully,
 [name]
-[address]
 [city]
 [ZipCode]`,
 `To the Columbia Heights City Council,
@@ -111,7 +107,6 @@ This ban affects cigars, pipe tobacco, and chew—products for adults, not kids.
 
 Best,
 [name]
-[address]
 [city]
 [ZipCode]`,
 `Dear Council,
@@ -120,7 +115,6 @@ This hurts Columbia Heights businesses and helps shops in other cities. Please s
 
 Regards,
 [name]
-[address]
 [city]
 [ZipCode]`,
     ];
@@ -130,15 +124,15 @@ Regards,
     }
 
     function buildMailto(body="") {
+	    let template = subjects[Math.floor(Math.random()*subjects.length)];
       const to = recipients.join(",");
-      return `mailto:${to}?subject=${encodeURIComponent(subject)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
+      return `mailto:${to}?subject=${encodeURIComponent(template)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
     }
 
     function personalize(template) {
       const name = document.getElementById("name").value.trim();
       const city  = document.getElementById("city").value.trim();
       const zip   = document.getElementById("zipCode").value.trim();
-      const addr  = document.getElementById("address").value.trim();
 
       // Validation for required fields
       if (!name || !city || !zip) {
@@ -151,9 +145,8 @@ Regards,
       return template
         .replace(/\[name\]/g, name)
         .replace(/\[city\]/g, city)
-        .replace(/\[ZipCode\]/g, zip)
-        .replace(/\[address\]/g, addr ? addr : "");
-    }
+        .replace(/\[ZipCode\]/g, zip);
+		}
 
     function sendRandom(templates) {
       let template = templates[Math.floor(Math.random()*templates.length)];
