@@ -63,7 +63,7 @@
     <input id="name" type="text" placeholder="Name (required)" />
     <input id="city" type="text" placeholder="City (required)" value="Columbia Heights" />
     <input id="zipCode" type="text" placeholder="Zip Code (required)" value="55421"/>
-    <input id="phone" type="number" placeholder="Phone Number"/>
+    <input id="phone" type="text" placeholder="Phone Number"/>
 
     <!-- Buttons -->
     <button id="btn1" class="btn">Send Pre-Drafted Email</button>
@@ -73,6 +73,8 @@
   </div>
 
   <script>
+
+
     const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
     const subjects = [
 "Stop the Columbia Heights flavor ban",
@@ -580,6 +582,21 @@ Best regards,
         window.location.href = buildMailto(""); // blank body
       }
     };
+
+    document.getElementById('phone').addEventListener('input', function (e) {
+  let x = e.target.value.replace(/\D/g, '').substring(0,10); // remove non-digits, limit to 10
+  let area = x.substring(0,3);
+  let middle = x.substring(3,6);
+  let last = x.substring(6,10);
+
+  if (x.length > 6) {
+    e.target.value = `(${area}) ${middle}-${last}`;
+  } else if (x.length > 3) {
+    e.target.value = `(${area}) ${middle}`;
+  } else if (x.length > 0) {
+    e.target.value = `(${area}`;
+  }
+});
   </script>
 </body>
 </html>
