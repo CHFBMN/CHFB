@@ -77,469 +77,85 @@
 
     const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
     const subjects = [
-"Stop the Columbia Heights flavor ban",
-"Protect adult choice in Columbia Heights",
-"Please support local businesses – vote no on the ban",
-"Flavored tobacco ban will hurt local stores",
-"Let adults make their own choices",
-"Don’t take away legal products from adults",
-"Keep Columbia Heights businesses strong",
-"Vote no on the flavored product ban",
-"Trust adults, not bans",
-"Stand with local shops – oppose the flavor ban"
 ];
+
+
 	const bcc = "stopmnflavorban@gmail.com";
 	
     const citizenTemplates = [
-`As a Columbia Heights resident,
-I believe adults should have the freedom to choose legal products.
-This ban limits choice and reduces city tax revenue. Please vote no.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter in Columbia Heights,
-I ask you not to restrict responsible adults.
-This ban only hurts customers and reduces local funds.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a citizen of Columbia Heights,
-I see nearby cities without this ban.
-People will shop elsewhere, and our city will lose money. Please reconsider.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I ask that adults be trusted to make their own choices.
-Please don’t limit products already regulated by law.
-
-Regards,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a concerned voter,
-I worry this ban will push shoppers to other cities and hurt local stores.
-Please support our businesses instead.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I know responsible stores check IDs carefully.
-Please don’t punish the businesses doing the right thing.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a local citizen,
-I see that stores already follow ID laws.
-This ban won’t stop youth—it will just harm our city’s economy.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I ask you to support licensed stores that protect youth.
-Don’t punish honest business owners.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a resident,
-I want to remind you this ban includes cigars and pipe tobacco—
-products used responsibly by adults. Please vote no.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I ask you not to take away products adults enjoy responsibly.
-Please keep them legal.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a citizen,
-I feel this ban goes too far.
-Adults who buy legal products responsibly shouldn’t lose their options.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I ask that you protect local shops.
-This ban helps businesses in other cities, not ours.
-
-Regards,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter,
-I believe customers should decide for themselves.
-Please don’t drive them to other towns with this ban.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights citizen,
-I urge you not to add new restrictions
-that will push people away from local stores.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter,
-I trust adults to make responsible choices.
-Please don’t take away legal products or local jobs.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I ask you to stand with small business owners.
-This ban will reduce sales and tax income.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a local citizen,
-I know other cities still allow flavored products.
-Please don’t make our community lose customers.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I ask you to trust adults to make their own choices.
-This ban is unfair to compliant stores.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a resident,
-I’ve seen stores check IDs every day.
-The problem isn’t retailers—please don’t ban legal products.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a concerned citizen,
-I urge you to protect adult freedom and small business.
-Please vote no on the flavor ban.
-
-Best regards,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I ask that adults keep their right to choose.
-Businesses and customers both deserve your support.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a resident,
-I believe in freedom of choice.
-Please don’t let this ban take away legal products and local jobs.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a citizen,
-I’m worried this ban removes options for responsible adults.
-Please vote no and support our local stores.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I’m concerned this will push shoppers to other towns.
-Please protect local business.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter,
-I ask that you keep consumer choice alive.
-People will just buy elsewhere if this ban passes.
-
-Regards,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I know adults can make responsible decisions.
-Please don’t restrict legal products.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter,
-I see nearby cities without these restrictions.
-We’ll spend our money there instead—please reconsider.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a local resident,
-I know our stores follow the law and check IDs.
-Please don’t punish good businesses.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I’ve seen store clerks check every ID.
-Kids aren’t buying there. Please stop this unnecessary ban.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a concerned citizen,
-I urge you not to take away legal adult products used responsibly.
-Please vote no.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I enjoy cigars and pipe tobacco responsibly.
-Please don’t restrict products meant for adults.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a voter,
-I value my freedom to choose.
-Please don’t remove legal options from responsible adults.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights citizen,
-I care about small businesses.
-This ban will hurt local jobs—please protect them.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a resident,
-I know our shop owners follow every rule.
-Please don’t punish honest people doing things right.
-
-Best,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights voter,
-I ask you to respect adult choice.
-Please don’t take away legal, regulated products.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a citizen,
-I believe banning flavors won’t stop youth—
-it will just close responsible stores. Please vote no.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I’ve seen firsthand that stores follow the law.
-Please don’t punish them for doing their job.
-
-Respectfully,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a local voter,
-I urge you to protect our community businesses and adult freedom.
-Vote no on the flavor ban.
-
-Thank you,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a Columbia Heights resident,
-I ask you to support responsible adults and local stores.
-Please reject this ban.
-
-Sincerely,
-[name],
-[city],
-[ZipCode]
-[phone]
-`,
-
-`As a concerned voter,
-I fear this ban will hurt jobs and tax revenue.
-Please keep flavored tobacco products legal.
-
-Best regards,
-[name],
-[city],
-[ZipCode]
-[phone]
-`
     ];
+
+  const GROUP1_PublicHealth = [
+  "Dear Council Members,\nAs an adult consumer, I’m concerned this ban removes reduced-harm options and will drive many back to cigarettes. Adults deserve access to safer, regulated products. Please protect public health and vote NO on the tobacco ordinance amendment, Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Hello City Council,\nThis ban eliminates safer alternatives that help adults stay away from cigarettes. It limits adult choice and risks worse public health outcomes. I urge you to oppose this amendment. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Council Members,\nRemoving flavored and reduced-harm products pushes adults toward traditional cigarettes, the most harmful option. This is bad policy and bad for health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Dear Columbia Heights Council,\nAdults should have access to less harmful products, not be forced back to smoking. Let’s focus on smarter regulations that protect health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "To the Council,\nThis proposal ignores harm reduction science and takes away better choices from adults. It will backfire by increasing cigarette use. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+];
+
+const GROUP3_AdultChoice = [
+  "Dear Council,\nAdults should be free to buy legal, regulated products. This ban removes options, hurts local stores, and limits personal choice. Please protect adult freedom and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Hello Council Members,\nAs a resident, I believe adults should be trusted to make their own choices. Don’t pass a law that restricts responsible consumers and damages local businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Council,\nAdults can make responsible decisions about legal products. This ban punishes those who follow the law and sends money to other cities. Support choice and local business—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Dear City Council,\nPlease trust adults to make their own decisions and protect our local economy. This ban will hurt responsible retailers and drive customers elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Council Members,\nNearby cities don’t have this ban. Adults will simply shop there instead, costing Columbia Heights tax revenue and jobs. Respect adult choice and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Hello Council,\nOur stores already check IDs. The problem isn’t retailers—it’s illegal sales elsewhere. Focus on enforcement, not bans. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Dear Council Members,\nProducts like cigars and pipe tobacco are enjoyed responsibly by adults. Please don’t take away these legal products. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "To the Council,\nThis ban threatens jobs, tax revenue, and small business livelihoods. Columbia Heights families depend on these stores. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Dear Columbia Heights Council,\nAdults know what they want and use these products responsibly. Don’t limit freedom or harm businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Council Members,\nPlease support responsible adults and local jobs. This ban will do more harm than good. I urge you to vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+];
+
+const GROUP4_Practicality = [
+  "Dear Columbia Heights Council,\nLocal shops follow every rule and check IDs. This ban unfairly punishes honest stores and shifts sales elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Hello Council,\nAdults deserve to choose safer products, and stores already enforce age laws. Don’t make compliance harder—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "To City Council,\nBanning flavors won’t stop youth use—it will only hurt responsible retailers and local jobs. Please reject Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Dear Council Members,\nOur local shops check IDs daily. Punishing compliant businesses is not fair or effective. Protect fairness—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+  "Hello Council,\nProtect adult freedom and small business owners who follow every rule. This ban is unnecessary and harmful. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+];
+
+
+
+const GROUP1_TITLES = [
+  "Don't push adults back to regular cigarettes",
+  "The flavor ban is bad for public health",
+  "Support safer options Reject Ordinance 1720",
+  "The ban ignores less harmful alternatives",
+  "I am concerned about health effects of the proposed ban"
+];
+
+const GROUP3_TITLES = [
+  "I oppose the flavor ban and its consequences",
+  "Protect my right to choose Vote NO on 1720",
+  "This ban goes too far Let adults decide",
+  "Please don't take away legal products I use",
+  "Adults should have choices Vote NO on restrictions",
+  "Enforcement is better than a total ban (Ordinance 1720)",
+  "Stores already check IDs, the ban isn't necessary",
+  "Please keep adult products like cigars and pipe tobacco legal",
+  "The ban ignores less harmful alternatives",
+  "Ordinance 1720 threatens jobs and city income",
+  "Trust residents to make their own responsible decisions",
+  "The flavor ban is bad for public health",
+  "Don't punish the honest local store owners",
+  "Please Vote NO on Tobacco Ordinance 1720",
+  "Vote Against Ordinance 1720 and listen to residents"
+];
+
+const GROUP4_TITLES = [
+  "Don't punish the honest local store owners",
+  "Adults should have choices Vote NO on restrictions",
+  "The flavor ban is bad for public health",
+  "Please Vote NO on Tobacco Ordinance 1720"
+];
 
     function encodeMailtoBody(str) {
       return encodeURIComponent(str).replace(/%0A/g, "%0D%0A");
     }
 
-    function buildMailto(body="") {
-	    let template = subjects[Math.floor(Math.random()*subjects.length)];
+    function buildMailto(body="",subject="") {
       const to = recipients.join(",");
-      return `mailto:${to}?subject=${encodeURIComponent(template)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
+      return `mailto:${to}?subject=${encodeURIComponent(subject)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
     }
 
     function personalize(template) {
@@ -567,15 +183,17 @@ Best regards,
         .replace(/\[phone\]/g, phone);
 		}
 
-    function sendRandom(templates) {
-      let template = templates[Math.floor(Math.random()*templates.length)];
+    function sendRandom(templates,subjects) {
+      let index = Math.floor(Math.random()*templates.length);
+      let template = templates[index];
+      let subject_temp = subjects[index];
       const body = personalize(template);
       if (body) {
-        window.location.href = buildMailto(body);
+        window.location.href = buildMailto(body,subject_temp);
       }
     }
 
-    document.getElementById("btn1").onclick = () => sendRandom(citizenTemplates);
+    document.getElementById("btn1").onclick = () => sendRandom(GROUP1_PublicHealth,GROUP1_TITLES);
     document.getElementById("btn3").onclick = () => {
       const body = personalize(""); // validation still applies
       if (body !== null) {
