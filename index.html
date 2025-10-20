@@ -1,60 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>STOP Columbia Heights Flavor Ban</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      margin:0;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;
-      background:#f8fafc;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+      background: #f8fafc;
     }
+
     .container {
-      text-align:center;
-      width:320px;
+      text-align: center;
+      width: 320px;
     }
-    h1 { margin-bottom:20px; font-size:1.6rem; color:#111827; }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.6rem;
+      color: #111827;
+    }
+
     input {
-      display:block;
-      width:100%;
-      padding:10px;
-      margin:6px 0;
-      border:1px solid #cbd5e1;
-      border-radius:8px;
-      font-size:1rem;
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 1rem;
     }
+
     .btn {
-      display:block;
-      width:100%;
-      margin:10px auto;
-      padding:14px;
-      font-size:1rem;
-      font-weight:600;
-      border:none;
-      border-radius:10px;
-      cursor:pointer;
-      background:#111827;
-      color:#fff;
-      transition:background .2s ease;
+      display: block;
+      width: 100%;
+      margin: 10px auto;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #111827;
+      color: #fff;
+      transition: background .2s ease;
     }
-    .btn:hover { background:#374151; }
+
+    .btn:hover {
+      background: #374151;
+    }
+
     .btn-light {
-      background:#e5e7eb;
-      color:#111827;
+      background: #e5e7eb;
+      color: #111827;
     }
-    .btn-light:hover { background:#d1d5db; }
+
+    .btn-light:hover {
+      background: #d1d5db;
+    }
+
     .error {
-      color:#b91c1c;
-      font-size:.9rem;
-      margin-top:6px;
+      color: #b91c1c;
+      font-size: .9rem;
+      margin-top: 6px;
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>STOP Columbia Heights Flavor Ban</h1>
@@ -63,7 +81,7 @@
     <input id="name" type="text" placeholder="Name (required)" />
     <input id="city" type="text" placeholder="City (required)" value="Columbia Heights" />
     <input id="zipCode" type="text" placeholder="Zip Code (required)" />
-    <input id="phone" type="text" placeholder="Phone Number" maxlength="14"/>
+    <input id="phone" type="text" placeholder="Phone Number" maxlength="14" />
 
     <!-- Buttons -->
     <button id="btn1" class="btn">Send Pre-Drafted Email</button>
@@ -75,102 +93,106 @@
   <script>
 
 
-    const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov" ];
+    const recipients = ["amarquezsimula@columbiaheightsmn.gov", "cbuesgens@columbiaheightsmn.gov", "LDeneen@columbiaheightsmn.gov", "rjames@columbiaheightsmn.gov", "jspriggs@columbiaheightsmn.gov", "evoight@columbiaheightsmn.gov"];
     const subjects = [
-];
+    ];
 
 
-	const bcc = "stopmnflavorban@gmail.com";
-	
+    const bcc = "stopmnflavorban@gmail.com";
+
     const citizenTemplates = [
     ];
 
-  const GROUP1_PublicHealth = [
-  "Dear Council Members,\nAs an adult consumer, I’m concerned this ban removes reduced-harm options and will drive many back to cigarettes. Adults deserve access to safer, regulated products. Please protect public health and vote NO on the tobacco ordinance amendment, Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Hello City Council,\nThis ban eliminates safer alternatives that help adults stay away from cigarettes. It limits adult choice and risks worse public health outcomes. I urge you to oppose this amendment. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Council Members,\nRemoving flavored and reduced-harm products pushes adults toward traditional cigarettes, the most harmful option. This is bad policy and bad for health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Dear Columbia Heights Council,\nAdults should have access to less harmful products, not be forced back to smoking. Let’s focus on smarter regulations that protect health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "To the Council,\nThis proposal ignores harm reduction science and takes away better choices from adults. It will backfire by increasing cigarette use. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
-];
+    const GROUP1_PublicHealth = [
+      "Dear Council Members,\nAs an adult consumer, I’m concerned this ban removes reduced-harm options and will drive many back to cigarettes. Adults deserve access to safer, regulated products. Please protect public health and vote NO on the tobacco ordinance amendment, Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello City Council,\nThis ban eliminates safer alternatives that help adults stay away from cigarettes. It limits adult choice and risks worse public health outcomes. I urge you to oppose this amendment. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nRemoving flavored and reduced-harm products pushes adults toward traditional cigarettes, the most harmful option. This is bad policy and bad for health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nAdults should have access to less harmful products, not be forced back to smoking. Let’s focus on smarter regulations that protect health. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nThis proposal ignores harm reduction science and takes away better choices from adults. It will backfire by increasing cigarette use. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+		"Dear Council,\nAdults should be free to buy legal, regulated products. This ban removes options, hurts local stores, and limits personal choice. Please protect adult freedom and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council Members,\nAs a resident, I believe adults should be trusted to make their own choices. Don’t pass a law that restricts responsible consumers and damages local businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council,\nAdults can make responsible decisions about legal products. This ban punishes those who follow the law and sends money to other cities. Support choice and local business—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear City Council,\nPlease trust adults to make their own decisions and protect our local economy. This ban will hurt responsible retailers and drive customers elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nNearby cities don’t have this ban. Adults will simply shop there instead, costing Columbia Heights tax revenue and jobs. Respect adult choice and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council,\the stores already check IDs. The problem isn’t retailers—it’s illegal sales elsewhere. Focus on enforcement, not bans. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nProducts like cigars and pipe tobacco are enjoyed responsibly by adults. Please don’t take away these legal products. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nThis ban threatens jobs, tax revenue, and small business livelihoods. Columbia Heights families depend on these stores. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nAdults know what they want and use these products responsibly. Don’t limit freedom or harm businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nPlease support responsible adults and local jobs. This ban will do more harm than good. I urge you to vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+      , "Dear Columbia Heights Council,\nLocal shops follow every rule and check IDs. This ban unfairly punishes honest stores and shifts sales elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council,\nAdults deserve to choose safer products, and stores already enforce age laws. Don’t make compliance harder—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To City Council,\nBanning flavors won’t stop youth use—it will only hurt responsible retailers and local jobs. Please reject Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\the local shops check IDs daily. Punishing compliant businesses is not fair or effective. Protect fairness—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council,\nProtect adult freedom and small business owners who follow every rule. This ban is unnecessary and harmful. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+    ];
 
-const GROUP3_AdultChoice = [
-  "Dear Council,\nAdults should be free to buy legal, regulated products. This ban removes options, hurts local stores, and limits personal choice. Please protect adult freedom and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Hello Council Members,\nAs a resident, I believe adults should be trusted to make their own choices. Don’t pass a law that restricts responsible consumers and damages local businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Council,\nAdults can make responsible decisions about legal products. This ban punishes those who follow the law and sends money to other cities. Support choice and local business—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Dear City Council,\nPlease trust adults to make their own decisions and protect our local economy. This ban will hurt responsible retailers and drive customers elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Council Members,\nNearby cities don’t have this ban. Adults will simply shop there instead, costing Columbia Heights tax revenue and jobs. Respect adult choice and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Hello Council,\nOur stores already check IDs. The problem isn’t retailers—it’s illegal sales elsewhere. Focus on enforcement, not bans. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Dear Council Members,\nProducts like cigars and pipe tobacco are enjoyed responsibly by adults. Please don’t take away these legal products. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "To the Council,\nThis ban threatens jobs, tax revenue, and small business livelihoods. Columbia Heights families depend on these stores. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Dear Columbia Heights Council,\nAdults know what they want and use these products responsibly. Don’t limit freedom or harm businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Council Members,\nPlease support responsible adults and local jobs. This ban will do more harm than good. I urge you to vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
-];
+    const GROUP3_AdultChoice = [
 
-const GROUP4_Practicality = [
-  "Dear Columbia Heights Council,\nLocal shops follow every rule and check IDs. This ban unfairly punishes honest stores and shifts sales elsewhere. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Hello Council,\nAdults deserve to choose safer products, and stores already enforce age laws. Don’t make compliance harder—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "To City Council,\nBanning flavors won’t stop youth use—it will only hurt responsible retailers and local jobs. Please reject Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Dear Council Members,\nOur local shops check IDs daily. Punishing compliant businesses is not fair or effective. Protect fairness—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
-  "Hello Council,\nProtect adult freedom and small business owners who follow every rule. This ban is unnecessary and harmful. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
-];
+    ];
+
+    const GROUP4_Practicality = [
+
+    ];
 
 
 
-const GROUP1_TITLES = [
-  "Don't push adults back to regular cigarettes",
-  "The flavor ban is bad for public health",
-  "Support safer options Reject Ordinance 1720",
-  "The ban ignores less harmful alternatives",
-  "I am concerned about health effects of the proposed ban"
-];
+    const GROUP1_TITLES = [
+      "Don't push adults back to regular cigarettes",
+      "The flavor ban is bad for public health",
+      "Support safer options Reject Ordinance 1720",
+      "The ban ignores less harmful alternatives",
+      "I am concerned about health effects of the proposed ban",
+      "I oppose the flavor ban and its consequences",
+      "Protect my right to choose Vote NO on 1720",
+      "This ban goes too far Let adults decide",
+      "Please don't take away legal products I use",
+      "Adults should have choices Vote NO on restrictions",
+      "Enforcement is better than a total ban (Ordinance 1720)",
+      "Stores already check IDs, the ban isn't necessary",
+      "Please keep adult products like cigars and pipe tobacco legal",
+      "The ban ignores less harmful alternatives",
+      "Ordinance 1720 threatens jobs and city income",
+      "Trust residents to make their own responsible decisions",
+      "The flavor ban is bad for public health",
+      "Don't punish the honest local store owners",
+      "Please Vote NO on Tobacco Ordinance 1720",
+      "Vote Against Ordinance 1720 and listen to residents",
+      "Don't punish the honest local store owners",
+      "Adults should have choices Vote NO on restrictions",
+      "The flavor ban is bad for public health",
+      "Please Vote NO on Tobacco Ordinance 1720"
+    ];
 
-const GROUP3_TITLES = [
-  "I oppose the flavor ban and its consequences",
-  "Protect my right to choose Vote NO on 1720",
-  "This ban goes too far Let adults decide",
-  "Please don't take away legal products I use",
-  "Adults should have choices Vote NO on restrictions",
-  "Enforcement is better than a total ban (Ordinance 1720)",
-  "Stores already check IDs, the ban isn't necessary",
-  "Please keep adult products like cigars and pipe tobacco legal",
-  "The ban ignores less harmful alternatives",
-  "Ordinance 1720 threatens jobs and city income",
-  "Trust residents to make their own responsible decisions",
-  "The flavor ban is bad for public health",
-  "Don't punish the honest local store owners",
-  "Please Vote NO on Tobacco Ordinance 1720",
-  "Vote Against Ordinance 1720 and listen to residents"
-];
+    const GROUP3_TITLES = [
 
-const GROUP4_TITLES = [
-  "Don't punish the honest local store owners",
-  "Adults should have choices Vote NO on restrictions",
-  "The flavor ban is bad for public health",
-  "Please Vote NO on Tobacco Ordinance 1720"
-];
+    ];
+
+    const GROUP4_TITLES = [
+
+    ];
 
     function encodeMailtoBody(str) {
       return encodeURIComponent(str).replace(/%0A/g, "%0D%0A");
     }
 
-    function buildMailto(body="",subject="") {
+    function buildMailto(body = "", subject = "") {
       const to = recipients.join(",");
       return `mailto:${to}?subject=${encodeURIComponent(subject)}&bcc=${encodeURIComponent(bcc)}&body=${encodeMailtoBody(body)}`;
     }
 
     function personalize(template) {
       const name = document.getElementById("name").value.trim();
-      const city  = document.getElementById("city").value.trim();
-      const zip   = document.getElementById("zipCode").value.trim();
-      let phone   = document.getElementById("phone").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const zip = document.getElementById("zipCode").value.trim();
+      let phone = document.getElementById("phone").value.trim();
 
       // Validation for required fields
       if (!name || !city || !zip) {
         document.getElementById("errorMsg").textContent = "Name, City, and zip code are required.";
         return null;
       }
-      if(!phone){
-        phone="";
+      if (!phone) {
+        phone = "";
       }
       document.getElementById("errorMsg").textContent = "";
 
@@ -181,19 +203,19 @@ const GROUP4_TITLES = [
         .replace(/\[city\]/g, city)
         .replace(/\[ZipCode\]/g, zip)
         .replace(/\[phone\]/g, phone);
-		}
+    }
 
-    function sendRandom(templates,subjects) {
-      let index = Math.floor(Math.random()*templates.length);
+    function sendRandom(templates, subjects) {
+      let index = Math.floor(Math.random() * templates.length);
       let template = templates[index];
       let subject_temp = subjects[index];
       const body = personalize(template);
       if (body) {
-        window.location.href = buildMailto(body,subject_temp);
+        window.location.href = buildMailto(body, subject_temp);
       }
     }
 
-    document.getElementById("btn1").onclick = () => sendRandom(GROUP1_PublicHealth,GROUP1_TITLES);
+    document.getElementById("btn1").onclick = () => sendRandom(GROUP1_PublicHealth, GROUP1_TITLES);
     document.getElementById("btn3").onclick = () => {
       const body = personalize(""); // validation still applies
       if (body !== null) {
@@ -202,19 +224,20 @@ const GROUP4_TITLES = [
     };
 
     document.getElementById('phone').addEventListener('input', function (e) {
-  let x = e.target.value.replace(/\D/g, '').substring(0,10); // remove non-digits, limit to 10
-  let area = x.substring(0,3);
-  let middle = x.substring(3,6);
-  let last = x.substring(6,10);
+      let x = e.target.value.replace(/\D/g, '').substring(0, 10); // remove non-digits, limit to 10
+      let area = x.substring(0, 3);
+      let middle = x.substring(3, 6);
+      let last = x.substring(6, 10);
 
-  if (x.length > 6) {
-    e.target.value = `(${area}) ${middle}-${last}`;
-  } else if (x.length > 3) {
-    e.target.value = `(${area}) ${middle}`;
-  } else if (x.length > 0) {
-    e.target.value = `(${area}`;
-  }
-});
+      if (x.length > 6) {
+        e.target.value = `(${area}) ${middle}-${last}`;
+      } else if (x.length > 3) {
+        e.target.value = `(${area}) ${middle}`;
+      } else if (x.length > 0) {
+        e.target.value = `(${area}`;
+      }
+    });
   </script>
 </body>
+
 </html>
