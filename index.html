@@ -82,7 +82,7 @@
      <div style="display:flex; align-items:center; margin-top:4px;">
       <small style="color:#d93025; font-size:14px;">City where you live</small>
     </div>
-    <input id="city" type="text" placeholder="Enter your city" value="Columbia Heights" required
+    <input id="city" type="text" placeholder="Columbia Heights" value="" required
       style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px;" />
    
     <input id="zipCode" type="text" placeholder="Zip Code (required)" />
@@ -213,14 +213,19 @@
 
     function personalize(template) {
       const name = document.getElementById("name").value.trim();
-      const city = document.getElementById("city").value.trim();
+      let city = document.getElementById("city").value.trim();
       const zip = document.getElementById("zipCode").value.trim();
       let phone = document.getElementById("phone").value.trim();
 
       // Validation for required fields
-      if (!name || !city || !zip) {
+      if (!name || !zip) {
         document.getElementById("errorMsg").textContent = "Name, City, and zip code are required.";
         return null;
+        
+      }
+
+      if( !city){
+        city = "Columbia Heights";
       }
       if (!phone) {
         phone = "";
