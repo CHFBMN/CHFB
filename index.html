@@ -79,7 +79,12 @@
 
     <!-- User Info -->
     <input id="name" type="text" placeholder="Name (required)" />
-    <input id="city" type="text" placeholder="City (required)" value="Columbia Heights" />
+     <div style="display:flex; align-items:center; margin-top:4px;">
+      <small style="color:#d93025; font-size:14px;">City where you live</small>
+    </div>
+    <input id="city" type="text" placeholder="Enter your city" value="Columbia Heights" required
+      style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px;" />
+   
     <input id="zipCode" type="text" placeholder="Zip Code (required)" />
     <input id="phone" type="text" placeholder="Phone Number" maxlength="14" />
 
@@ -104,46 +109,46 @@
     ];
 
     const GROUP1_PublicHealth = [
-  "Dear Council Members,\nI am deeply concerned that this ordinance would remove products that have helped many adults stay away from cigarettes. Flavored and reduced-harm alternatives are not the problem—they are part of the solution. By banning these products, we risk reversing years of progress in tobacco harm reduction and pushing people back toward smoking. Please support adult choice and proven public health strategies by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nI am deeply concerned that this ordinance would remove products that have helped many adults stay away from cigarettes. Flavored and reduced-harm alternatives are not the problem—they are part of the solution. By banning these products, we risk reversing years of progress in tobacco harm reduction and pushing people back toward smoking. Please support adult choice and proven public health strategies by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Hello City Council,\nThis proposed flavor ban will take away legal and regulated products that help adults avoid smoking. Responsible adults deserve access to safer alternatives, not policies that force them to return to cigarettes. Public health is about helping people make better choices, not removing them altogether. I urge you to stand for health, science, and common sense—please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello City Council,\nThis proposed flavor ban will take away legal and regulated products that help adults avoid smoking. Responsible adults deserve access to safer alternatives, not policies that force them to return to cigarettes. Public health is about helping people make better choices, not removing them altogether. I urge you to stand for health, science, and common sense—please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Council Members,\nI respectfully ask you to reconsider the flavor ban. Removing these products doesn’t stop demand—it just moves it to unregulated sources or back to traditional smoking. Adults deserve safer options and honest information, not blanket prohibitions. Let’s encourage education and enforcement, not bans that hurt responsible users and local businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nI respectfully ask you to reconsider the flavor ban. Removing these products doesn’t stop demand—it just moves it to unregulated sources or back to traditional smoking. Adults deserve safer options and honest information, not blanket prohibitions. Let’s encourage education and enforcement, not bans that hurt responsible users and local businesses. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Columbia Heights Council,\nAdults who use flavored or reduced-harm products are not the problem. We follow the law, shop locally, and want to make responsible decisions for our health. This ban would take away products that are proven to help adults avoid cigarettes and could drive them back to smoking. Please support health-focused policies, not harmful restrictions. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nAdults who use flavored or reduced-harm products are not the problem. We follow the law, shop locally, and want to make responsible decisions for our health. This ban would take away products that are proven to help adults avoid cigarettes and could drive them back to smoking. Please support health-focused policies, not harmful restrictions. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "To the Council,\nScientific research shows that reduced-risk products can help adults transition away from smoking. This ordinance would remove those options entirely and hurt both public health and local businesses. Instead of prohibiting responsible adult use, we should focus on enforcement against illegal sellers and youth access. Please support smarter, balanced policies—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nScientific research shows that reduced-risk products can help adults transition away from smoking. This ordinance would remove those options entirely and hurt both public health and local businesses. Instead of prohibiting responsible adult use, we should focus on enforcement against illegal sellers and youth access. Please support smarter, balanced policies—vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Council,\nAdults should have the freedom to purchase legal and regulated products. The proposed ban will not solve youth access issues—it will simply penalize responsible adults and drive business away from Columbia Heights. Every neighboring city will benefit from our lost sales and tax revenue. Please defend fairness, adult choice, and local jobs by rejecting Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council,\nAdults should have the freedom to purchase legal and regulated products. The proposed ban will not solve youth access issues—it will simply penalize responsible adults and drive business away from Columbia Heights. Every neighboring city will benefit from our lost sales and tax revenue. Please defend fairness, adult choice, and local jobs by rejecting Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Hello Council Members,\nAs a long-time resident and consumer, I’m asking you to oppose this flavor ban. Adults who buy these products do so responsibly, and local retailers already enforce strict ID laws. This ordinance won’t stop youth use—it will only harm compliant businesses and reduce local tax income. Please put trust in responsible adults and local retailers by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council Members,\nAs a long-time resident and consumer, I’m asking you to oppose this flavor ban. Adults who buy these products do so responsibly, and local retailers already enforce strict ID laws. This ordinance won’t stop youth use—it will only harm compliant businesses and reduce local tax income. Please put trust in responsible adults and local retailers by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Council,\nThis ban sends the wrong message to responsible adults who follow the law. It will drive legitimate sales to nearby cities or unregulated sources, hurting Columbia Heights’ economy. Instead of punishing law-abiding stores, we should focus on preventing illegal sales. Please protect choice, public health, and local revenue by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council,\nThis ban sends the wrong message to responsible adults who follow the law. It will drive legitimate sales to nearby cities or unregulated sources, hurting Columbia Heights’ economy. Instead of punishing law-abiding stores, we should focus on preventing illegal sales. Please protect choice, public health, and local revenue by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear City Council,\nI’m urging you to protect the freedom of adults to make responsible decisions about the products they use. This ban will not stop use—it will simply shift purchases elsewhere, taking local tax dollars with it. Many adults rely on these safer alternatives to avoid smoking, and removing them will have real consequences. Please oppose Ordinance 1720 and keep Columbia Heights fair and competitive.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear City Council,\nI’m urging you to protect the freedom of adults to make responsible decisions about the products they use. This ban will not stop use—it will simply shift purchases elsewhere, taking local tax dollars with it. Many adults rely on these safer alternatives to avoid smoking, and removing them will have real consequences. Please oppose Ordinance 1720 and keep Columbia Heights fair and competitive.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Council Members,\nOther nearby cities allow these products, which means this ban will not reduce access—it will just move business across city lines. The result will be lost revenue, job cuts, and more adult smokers. I ask that you stand up for local fairness, economic stability, and public health by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nOther nearby cities allow these products, which means this ban will not reduce access—it will just move business across city lines. The result will be lost revenue, job cuts, and more adult smokers. I ask that you stand up for local fairness, economic stability, and public health by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Hello Council,\nRetailers in Columbia Heights already check IDs and follow every law to prevent youth sales. Banning legitimate businesses for doing their jobs makes no sense. The problem lies with illegal sellers, not compliant retailers. Let’s strengthen enforcement instead of passing a ban that punishes honest workers. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council,\nRetailers in Columbia Heights already check IDs and follow every law to prevent youth sales. Banning legitimate businesses for doing their jobs makes no sense. The problem lies with illegal sellers, not compliant retailers. Let’s strengthen enforcement instead of passing a ban that punishes honest workers. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Council Members,\nProducts like cigars, pipe tobacco, and other flavored options are enjoyed responsibly by many adults. They are legal, regulated, and part of our local economy. Please don’t punish responsible consumers or small businesses by removing products that aren’t causing youth problems. I ask that you vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nProducts like cigars, pipe tobacco, and other flavored options are enjoyed responsibly by many adults. They are legal, regulated, and part of our local economy. Please don’t punish responsible consumers or small businesses by removing products that aren’t causing youth problems. I ask that you vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "To the Council,\nThe proposed ordinance threatens the livelihood of local workers and small businesses. Many of these shops have invested years building compliant operations that check every ID and follow every rule. This ban will take away their customers and cut city tax income. Please protect our local economy and say NO to Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nThe proposed ordinance threatens the livelihood of local workers and small businesses. Many of these shops have invested years building compliant operations that check every ID and follow every rule. This ban will take away their customers and cut city tax income. Please protect our local economy and say NO to Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Columbia Heights Council,\nAdults in our city deserve to make informed choices about their own lives. The current system already works—licensed stores check IDs and sell responsibly. Please don’t pass a law that takes away freedom and punishes businesses doing everything right. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nAdults in our city deserve to make informed choices about their own lives. The current system already works—licensed stores check IDs and sell responsibly. Please don’t pass a law that takes away freedom and punishes businesses doing everything right. Vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Council Members,\nPlease consider the consequences this ban would bring. Responsible adults will lose their freedom of choice, businesses will lose customers, and the city will lose vital revenue. All of this while the ban does little to reduce youth use. Let’s take a smarter approach to regulation and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nPlease consider the consequences this ban would bring. Responsible adults will lose their freedom of choice, businesses will lose customers, and the city will lose vital revenue. All of this while the ban does little to reduce youth use. Let’s take a smarter approach to regulation and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Columbia Heights Council,\nOur local shops are compliant, responsible, and enforce strict age verification. They should be rewarded for that—not punished. This ban unfairly targets honest business owners and will push customers to cities without these restrictions. Please protect fairness, public trust, and local business by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nOur local shops are compliant, responsible, and enforce strict age verification. They should be rewarded for that—not punished. This ban unfairly targets honest business owners and will push customers to cities without these restrictions. Please protect fairness, public trust, and local business by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Hello Council,\nAdults should be trusted to make their own decisions about legal products. This ordinance does not address youth access—it only takes options away from adults and hurts compliant retailers. Let’s focus on targeted education and enforcement instead. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello Council,\nAdults should be trusted to make their own decisions about legal products. This ordinance does not address youth access—it only takes options away from adults and hurts compliant retailers. Let’s focus on targeted education and enforcement instead. Please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "To City Council,\nProhibiting flavored tobacco won’t stop youth use. It will simply push adults to unregulated markets or back to smoking. The better solution is strong enforcement and responsible retail partnerships. Please reject this one-size-fits-all approach and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To City Council,\nProhibiting flavored tobacco won’t stop youth use. It will simply push adults to unregulated markets or back to smoking. The better solution is strong enforcement and responsible retail partnerships. Please reject this one-size-fits-all approach and vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Dear Council Members,\nLocal shops work hard to follow the law and prevent underage sales. Penalizing them for being compliant sends the wrong message. Let’s reward good behavior, not punish it. Please stand for fairness and common sense by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nLocal shops work hard to follow the law and prevent underage sales. Penalizing them for being compliant sends the wrong message. Let’s reward good behavior, not punish it. Please stand for fairness and common sense by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-  "Hello Council,\nAdults deserve to make their own choices about legal products without government overreach. This ban would harm public health, hurt small businesses, and create an underground market. Please protect our community’s freedom, jobs, and safety by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
-];
+      "Hello Council,\nAdults deserve to make their own choices about legal products without government overreach. This ban would harm public health, hurt small businesses, and create an underground market. Please protect our community’s freedom, jobs, and safety by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+    ];
 
 
     const GROUP3_AdultChoice = [
@@ -156,38 +161,38 @@
 
 
 
-   const GROUP1_TITLES = [
-  "Don’t push adults back to smoking – reject the ban",
-  "The flavor ban undermines public health progress",
-  "Support safer options – vote NO on Ordinance 1720",
-  "This ban ignores science and harm reduction",
-  "Concerned about the health impact of this ban",
-  "Oppose the flavor ban and protect adult choice",
-  "Protect my right to choose – vote NO on Ordinance 1720",
-  "This ban goes too far – let responsible adults decide",
-  "Please don’t take away legal products adults use responsibly",
-  "Adults deserve choices – vote NO on these restrictions",
-  "Focus on enforcement, not a blanket flavor ban",
-  "Stores already verify IDs – a ban isn’t the answer",
-  "Keep adult products like cigars and pipe tobacco legal",
-  "This policy ignores safer and less harmful alternatives",
-  "Ordinance 1720 will hurt local jobs and city revenue",
-  "Trust Columbia Heights residents to make responsible decisions",
-  "Banning flavors won’t protect health – it will make it worse",
-  "Don’t punish honest retailers for following the law",
-  "Please vote NO on the tobacco flavor ban (Ordinance 1720)",
-  "Vote NO on Ordinance 1720 and support responsible adults",
-  "Protect small businesses – reject the tobacco ordinance",
-  "Adults can make responsible choices – stop this ban",
-  "The proposed flavor ban harms both health and fairness",
-  "Let adults choose safer products – vote NO on 1720",
-  "Ordinance 1720 hurts families, jobs, and local revenue",
-  "Public health should focus on education, not prohibition",
-  "Don’t ban safer options – keep harm-reduction products legal",
-  "Flavored options help adults quit smoking – don’t ban them",
-  "This ban will drive a black market and hurt our city",
-  "Listen to residents – reject the unnecessary flavor ban"
-];
+    const GROUP1_TITLES = [
+      "Don’t push adults back to smoking – reject the ban",
+      "The flavor ban undermines public health progress",
+      "Support safer options – vote NO on Ordinance 1720",
+      "This ban ignores science and harm reduction",
+      "Concerned about the health impact of this ban",
+      "Oppose the flavor ban and protect adult choice",
+      "Protect my right to choose – vote NO on Ordinance 1720",
+      "This ban goes too far – let responsible adults decide",
+      "Please don’t take away legal products adults use responsibly",
+      "Adults deserve choices – vote NO on these restrictions",
+      "Focus on enforcement, not a blanket flavor ban",
+      "Stores already verify IDs – a ban isn’t the answer",
+      "Keep adult products like cigars and pipe tobacco legal",
+      "This policy ignores safer and less harmful alternatives",
+      "Ordinance 1720 will hurt local jobs and city revenue",
+      "Trust Columbia Heights residents to make responsible decisions",
+      "Banning flavors won’t protect health – it will make it worse",
+      "Don’t punish honest retailers for following the law",
+      "Please vote NO on the tobacco flavor ban (Ordinance 1720)",
+      "Vote NO on Ordinance 1720 and support responsible adults",
+      "Protect small businesses – reject the tobacco ordinance",
+      "Adults can make responsible choices – stop this ban",
+      "The proposed flavor ban harms both health and fairness",
+      "Let adults choose safer products – vote NO on 1720",
+      "Ordinance 1720 hurts families, jobs, and local revenue",
+      "Public health should focus on education, not prohibition",
+      "Don’t ban safer options – keep harm-reduction products legal",
+      "Flavored options help adults quit smoking – don’t ban them",
+      "This ban will drive a black market and hurt our city",
+      "Listen to residents – reject the unnecessary flavor ban"
+    ];
 
     const GROUP3_TITLES = [
 
