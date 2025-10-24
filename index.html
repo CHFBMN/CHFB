@@ -79,12 +79,12 @@
 
     <!-- User Info -->
     <input id="name" type="text" placeholder="Name (required)" />
-     <div style="display:flex; align-items:center; margin-top:4px;">
+    <div style="display:flex; align-items:center; margin-top:4px;">
       <small style="color:#d93025; font-size:14px;">City where you live</small>
     </div>
     <input id="city" type="text" placeholder="Columbia Heights" value="" required
       style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px; font-size:14px;" />
-   
+
     <input id="zipCode" type="text" placeholder="Zip Code (required)" />
     <input id="phone" type="text" placeholder="Phone Number" maxlength="14" />
 
@@ -108,7 +108,7 @@
     const citizenTemplates = [
     ];
 
-    const GROUP1_PublicHealth = [
+    const GROUP1_P = [
       "Dear Council Members,\nI am deeply concerned that this ordinance would remove products that have helped many adults stay away from cigarettes. Flavored and reduced-harm alternatives are not the problem—they are part of the solution. By banning these products, we risk reversing years of progress in tobacco harm reduction and pushing people back toward smoking. Please support adult choice and proven public health strategies by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
       "Hello City Council,\nThis proposed flavor ban will take away legal and regulated products that help adults avoid smoking. Responsible adults deserve access to safer alternatives, not policies that force them to return to cigarettes. Public health is about helping people make better choices, not removing them altogether. I urge you to stand for health, science, and common sense—please vote NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
@@ -147,19 +147,27 @@
 
       "Dear Council Members,\nLocal shops work hard to follow the law and prevent underage sales. Penalizing them for being compliant sends the wrong message. Let’s reward good behavior, not punish it. Please stand for fairness and common sense by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
 
-      "Hello Council,\nAdults deserve to make their own choices about legal products without government overreach. This ban would harm public health, hurt small businesses, and create an underground market. Please protect our community’s freedom, jobs, and safety by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+      "Hello Council,\nAdults deserve to make their own choices about legal products without government overreach. This ban would harm public health, hurt small businesses, and create an underground market. Please protect our community’s freedom, jobs, and safety by voting NO on Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nEliminating tobacco licenses entirely will destroy small local businesses that have followed every law and regulation. Shutting down three smoke shops doesn’t protect anyone—it only puts people out of work and pushes sales to other cities. Please protect small business owners and say NO to reducing the license number to zero.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello City Council,\nI’m strongly opposed to the plan to reduce tobacco licenses to zero. Local shops that have invested years serving adults responsibly would be shut down. This is unfair, unnecessary, and will hurt Columbia Heights’ economy. Please protect jobs and reject this part of the ordinance.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nRemoving all tobacco licenses means the city is effectively banning legal businesses that follow the law. These stores pay taxes, employ residents, and check every ID. This change would devastate livelihoods and drive commerce elsewhere. Please vote NO on this harmful restriction.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nReducing tobacco licenses to zero will eliminate responsible stores that operate legally and safely. These businesses support families and contribute to the city’s revenue. Don’t destroy what’s working—reject this overreach.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nClosing all smoke shops by reducing licenses to zero will not help public health—it will just move sales and jobs out of the city. Please stand with responsible retailers and say NO to this part of Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nRaising the minimum price of cigarettes and snuff to $12 unfairly targets adult consumers and small businesses. This increase will drive people to nearby cities or illegal sellers, hurting both public health and local revenue. Please reject this unnecessary price hike.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Hello City Council,\nA $12 minimum price is excessive and punishes responsible adults who purchase legal products. It will only push customers to shop elsewhere and hurt Columbia Heights retailers. Please reconsider this unfair rule.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Council Members,\nThe proposed $12 minimum price will make it harder for adults to afford legal products while doing nothing to stop illegal sales. It’s a regressive policy that harms low-income residents and compliant stores. Please vote NO on this increase.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Columbia Heights Council,\nRaising prices to $12 doesn’t stop demand—it just drives people to nearby cities. Local stores will lose customers and the city will lose tax income. Please support fair pricing and oppose this change.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "To the Council,\nThe $12 price rule will make Columbia Heights uncompetitive and punish law-abiding retailers. Consumers will simply cross city lines, and small stores will suffer. Please protect fairness and local jobs by rejecting this part of Ordinance 1720.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+      "Dear Council Members,\nI’m concerned that the new ordinance removes self-service access to premium cigars in humidors. These products are already sold in age-restricted stores where every customer shows ID. Preventing adults from selecting cigars from a humidor makes no sense and hurts legitimate tobacco retailers. Please reconsider this part of the ordinance and allow self-service in adult-only shops.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+
+      "Hello City Council,\nWhy is the ordinance removing self-service access for adult cigar customers? In a 21+ smoke shop, there is no youth exposure or risk. Premium cigars are a niche, high-quality product, and customers expect to choose them directly from the humidor. Please respect adult choice and keep self-service for premium cigars in licensed smoke shops.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+
+      "Council Members,\nThe new proposal to ban self-service in smoke shops will prevent adults from selecting cigars from humidors. These stores already check IDs and restrict entry to those over 21. There is no reason to treat responsible cigar customers like children. Please modify the ordinance to allow humidor access in adult-only establishments.\n\n[name]\n[city]\n[ZipCode]\n[phone]",
+
+      "Dear Columbia Heights Council,\nEliminating self-service in licensed smoke shops is unfair and unnecessary. Customers buying premium cigars want to inspect the cigar, the wrapper, and the aroma before purchase. These are not impulse buys by minors—they are legal adult products sold responsibly. Please protect this tradition and allow self-service humidors in adult stores.\n\n[name]\n[city]\n[ZipCode]\n[phone]"
+
+
     ];
-
-
-    const GROUP3_AdultChoice = [
-
-    ];
-
-    const GROUP4_Practicality = [
-
-    ];
-
-
 
     const GROUP1_TITLES = [
       "Don’t push adults back to smoking – reject the ban",
@@ -191,7 +199,22 @@
       "Don’t ban safer options – keep harm-reduction products legal",
       "Flavored options help adults quit smoking – don’t ban them",
       "This ban will drive a black market and hurt our city",
-      "Listen to residents – reject the unnecessary flavor ban"
+      "Listen to residents – reject the unnecessary flavor ban",
+      "Protect small businesses – don’t eliminate tobacco licenses",
+      "Allow self-service humidors for premium cigars",
+      "Reducing licenses to zero destroys local jobs",
+      "Keep responsible stores open – reject license elimination",
+      "Don’t shut down legal retailers in our city",
+      "Zero licenses means zero fairness – oppose this clause",
+      "Reject the $12 minimum price increase",
+      "The $12 rule hurts small businesses and adults",
+      "Stop the unfair price hike in Ordinance 1720",
+      "Higher prices will push buyers to other cities",
+      "A $12 minimum punishes responsible adults",
+      "Don’t ban humidor access in adult-only smoke shops",
+      "Why cancel self-service for cigar customers?",
+      "Protect responsible cigar access – amend the ordinance",
+      "Self-service in 21+ shops poses no risk to youth"
     ];
 
     const GROUP3_TITLES = [
@@ -221,10 +244,10 @@
       if (!name || !zip) {
         document.getElementById("errorMsg").textContent = "Name, City, and zip code are required.";
         return null;
-        
+
       }
 
-      if( !city){
+      if (!city) {
         city = "Columbia Heights";
       }
       if (!phone) {
@@ -251,7 +274,7 @@
       }
     }
 
-    document.getElementById("btn1").onclick = () => sendRandom(GROUP1_PublicHealth, GROUP1_TITLES);
+    document.getElementById("btn1").onclick = () => sendRandom(GROUP1_P, GROUP1_TITLES);
     document.getElementById("btn3").onclick = () => {
       const body = personalize(""); // validation still applies
       if (body !== null) {
